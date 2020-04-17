@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-// import { filmsReducer } from './filmsReducer';
+import { episodesReducer } from './episodesReducer';
 // import { singleFilmReducer } from './singleFilmReducer';
 
 export const rootReducer = combineReducers({
-  // films: filmsReducer,
+  episodes: episodesReducer,
   // singleFilm: singleFilmReducer,
 });
