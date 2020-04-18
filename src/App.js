@@ -1,7 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import { HomePage, EpisodesPage, NotFoundPage } from './pages';
+import {
+  HomePage,
+  EpisodesPage,
+  SingleEpisodePage,
+  NotFoundPage,
+} from './pages';
 import { store } from './redux-state/store';
 import './App.css';
 
@@ -27,7 +32,7 @@ export const App = () => {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/episodes" component={EpisodesPage} />
-              {/* <Route exact path="/episodes/:id" component={SingleEpisodePage} /> */}
+              <Route exact path="/episodes/:id" component={SingleEpisodePage} />
               <Route path="*" component={NotFoundPage} />
             </Switch>
           </div>

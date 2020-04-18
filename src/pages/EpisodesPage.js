@@ -32,7 +32,7 @@ const _EpisodesPage = ({ dispatch, episodes, loading, error }) => {
             <td>{episode.air_date}</td>
             <td>{episode.episode}</td>
             <td>
-              <Link to={`/episodes/${episodes.id}`}>View film</Link>
+              <Link to={`/episodes/${episode.id}`}>View film</Link>
             </td>
           </tr>
         ))}

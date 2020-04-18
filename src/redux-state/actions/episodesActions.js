@@ -24,7 +24,7 @@ export const getEpisodesThunk = () => {
     dispatch(loadEpisodesRequestActionCreator());
 
     return axios
-      .get(`${BASE_API_URL}/episode`)
+      .get(`${BASE_API_URL}/episode/`)
       .then((response) => {
         dispatch(loadEpisodesSuccessActionCreator(response.data));
       })
