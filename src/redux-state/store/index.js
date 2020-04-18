@@ -1,6 +1,6 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux-logger';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 
 import { rootReducer } from '../reducers';
@@ -8,10 +8,13 @@ import { rootReducer } from '../reducers';
 const middleware = [thunk];
 
 if (process.env.NODE_ENV === 'development') {
-  middleware.push(logger);
+  middleware.push(reduxImmutableStateInvariant(), logger);
 }
 
 export const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(...middleware))
+  compose(
+    applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );

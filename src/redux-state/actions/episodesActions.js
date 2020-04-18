@@ -19,6 +19,8 @@ export const loadEpisodesFailureActionCreator = () => ({
 // Thunks
 // get all episodes
 // Thunk - a function that wraps an expression to delay its evaluation
+// A Thunk wraps an async operation in a function (as below)
+// Sagas handle asyc operations via generators
 export const getEpisodesThunk = () => {
   return (dispatch, getState) => {
     dispatch(loadEpisodesRequestActionCreator());
