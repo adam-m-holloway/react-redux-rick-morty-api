@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getEpisodesThunk } from '../redux-state/actions/episodesActions';
+import { loadEpisodesRequestActionCreator } from '../redux-state/actions/episodesActions';
 
 const _EpisodesPage = ({ dispatch, episodes, loading, error }) => {
   useEffect(() => {
-    dispatch(getEpisodesThunk());
+    dispatch(loadEpisodesRequestActionCreator());
   }, [dispatch]);
 
   // Show loading, error or success state

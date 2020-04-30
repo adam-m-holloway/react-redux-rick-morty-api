@@ -4,6 +4,7 @@ import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import createSagaMiddleware from 'redux-saga';
 
 import { rootReducer } from '../reducers';
+import { rootSaga } from '../sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
@@ -19,3 +20,5 @@ export const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
+
+sagaMiddleware.run(rootSaga);
