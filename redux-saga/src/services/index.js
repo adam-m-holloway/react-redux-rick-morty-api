@@ -6,6 +6,5 @@ export const getEpisodes = () => {
 };
 
 export const getSingleEpisode = (id) => {
-  console.log('dis id is:', id);
   return axios.get(`${BASE_API_URL}/episode/${id}/`);
 };
