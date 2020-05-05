@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getSingleEpisodeThunk } from '../redux-state/actions/singleEpisodeActions';
+import { loadSingleEpisodeRequestActionCreator } from '../redux-state/actions/singleEpisodeActions';
 
 // `match` param is automatically passed and provides route data
 const _SingleEpisodePage = ({ match, dispatch, episode, loading, error }) => {
   const { id } = match.params;
 
   useEffect(() => {
-    dispatch(getSingleEpisodeThunk(id));
+    dispatch(loadSingleEpisodeRequestActionCreator(id));
   }, [dispatch, id]);
 
   return (
