@@ -3,9 +3,10 @@ import { render } from '@testing-library/react';
 import { App } from './App';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
+import createSagaMiddleware from 'redux-saga';
 
-const middlewares = [];
-const mockStore = configureStore(middlewares);
+const sagaMiddleware = createSagaMiddleware();
+const mockStore = configureStore([sagaMiddleware]);
 
 describe('<App />', () => {
   let store;
@@ -23,7 +24,7 @@ describe('<App />', () => {
 
   test('should render the header', () => {
     const { getByText } = component;
-    const headerText = getByText(/React Redux Rick and Morty API/i);
+    const headerText = getByText(/React Redux App/i);
     expect(headerText).toBeInTheDocument();
   });
 });

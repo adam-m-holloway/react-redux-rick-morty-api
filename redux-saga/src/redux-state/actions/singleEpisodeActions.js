@@ -6,9 +6,9 @@ export const loadSingleEpisodeRequestActionCreator = (id) => ({
   payload: { id },
 });
 
-export const loadSingleEpisodeSuccessActionCreator = (films) => ({
+export const loadSingleEpisodeSuccessActionCreator = (episodes) => ({
   type: actionTypes.LOAD_SINGLE_EPISODE_SUCCESS,
-  payload: films,
+  payload: episodes,
 });
 
 export const loadSingleEpisodeFailureActionCreator = (error) => ({

@@ -10,8 +10,8 @@ const _EpisodesPage = ({ dispatch, episodes, loading, error }) => {
 
   // Show loading, error or success state
   const renderEpisodes = () => {
-    if (loading) return <p>Loading films...</p>;
-    if (error) return <p>Unable to display films.</p>;
+    if (loading) return <p>Loading episodes...</p>;
+    if (error) return <p>Unable to display episodes.</p>;
     return episodesTable();
   };
 
@@ -32,7 +32,7 @@ const _EpisodesPage = ({ dispatch, episodes, loading, error }) => {
             <td>{episode.air_date}</td>
             <td>{episode.episode}</td>
             <td>
-              <Link to={`/episodes/${episode.id}`}>View film</Link>
+              <Link to={`/episodes/${episode.id}`}>View episode</Link>
             </td>
           </tr>
         ))}

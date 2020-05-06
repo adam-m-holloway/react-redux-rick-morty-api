@@ -1,17 +1,16 @@
-import { takeEvery, call, put } from 'redux-saga/effects';
-
-import { actionTypes } from '../actions/actionTypes';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import {
-  loadEpisodesSuccessActionCreator,
   loadEpisodesFailureActionCreator,
+  loadEpisodesSuccessActionCreator,
 } from '../actions/episodesActions';
 import { getEpisodes } from '../../services';
+import { actionTypes } from '../actions/actionTypes';
 
 /*
   worker saga
   triggered by the EpisodesSaga() watcher saga
 */
-function* loadEpisodesSaga() {
+export function* loadEpisodesSaga() {
   try {
     const response = yield call(getEpisodes); // make API request and store response in variable
     yield put(loadEpisodesSuccessActionCreator(response.data)); // dispatch action
