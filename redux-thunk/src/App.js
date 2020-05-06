@@ -12,6 +12,7 @@ import './App.css';
 
 export const App = () => {
   return (
+    // TODO: move `<Provider store={store}></Provider>` to `index.js` as per the Sagas folder for testing purposes
     <Provider store={store}>
       <BrowserRouter>
         <div>

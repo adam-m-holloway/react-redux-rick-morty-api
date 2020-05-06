@@ -7,9 +7,9 @@ export const loadSingleEpisodeRequestActionCreator = () => ({
   type: actionTypes.LOAD_SINGLE_EPISODE_REQUEST,
 });
 
-export const loadSingleEpisodeSuccessActionCreator = (films) => ({
+export const loadSingleEpisodeSuccessActionCreator = (episodes) => ({
   type: actionTypes.LOAD_SINGLE_EPISODE_SUCCESS,
-  payload: films,
+  payload: episodes,
 });
 
 export const loadSingleEpisodeFailureActionCreator = () => ({
@@ -19,7 +19,6 @@ export const loadSingleEpisodeFailureActionCreator = () => ({
 // Thunks
 // get single film
 export const getSingleEpisodeThunk = (id) => {
-  console.log('id in thunk:', id);
   return (dispatch) => {
     dispatch(loadSingleEpisodeRequestActionCreator());
 
