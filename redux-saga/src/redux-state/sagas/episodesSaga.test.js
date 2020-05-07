@@ -15,7 +15,7 @@ describe('EpisodesSaga', () => {
       .provide([[matchers.call.fn(getEpisodes), { data: mockEpisodes }]])
       .put({
         type: actionTypes.LOAD_EPISODES_SUCCESS,
-        payload: { episodes: mockEpisodes },
+        payload: mockEpisodes,
       })
       .run();
   });
