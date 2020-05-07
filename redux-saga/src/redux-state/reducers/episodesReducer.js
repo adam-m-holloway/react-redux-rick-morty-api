@@ -25,7 +25,6 @@ export const episodesReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: true,
-        errorMessage: action.payload,
       };
     default:
       return state;

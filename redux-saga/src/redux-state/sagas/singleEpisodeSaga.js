@@ -15,8 +15,8 @@ export function* loadSingleEpisodeSaga({ payload: { id } }) {
   try {
     const response = yield call(getSingleEpisode, id);
     yield put(loadSingleEpisodeSuccessActionCreator(response.data));
-  } catch (errorMsg) {
-    yield put(loadSingleEpisodeFailureActionCreator(errorMsg));
+  } catch (error) {
+    yield put(loadSingleEpisodeFailureActionCreator(error));
   }
 }
 

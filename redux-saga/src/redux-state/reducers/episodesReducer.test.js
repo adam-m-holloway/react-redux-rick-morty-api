@@ -26,6 +26,7 @@ describe('Episodes reducer', () => {
   it('should set error if loading failed', () => {
     const action = {
       type: actionTypes.LOAD_EPISODES_FAILURE,
+      payload: { error: new Error() },
     };
 
     const newState = episodesReducer({}, action);

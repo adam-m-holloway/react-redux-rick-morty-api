@@ -14,8 +14,8 @@ export function* loadEpisodesSaga() {
   try {
     const response = yield call(getEpisodes); // make API request and store response in variable
     yield put(loadEpisodesSuccessActionCreator(response.data)); // dispatch action
-  } catch (errorMsg) {
-    yield put(loadEpisodesFailureActionCreator(errorMsg));
+  } catch (error) {
+    yield put(loadEpisodesFailureActionCreator(error));
   }
 }
 

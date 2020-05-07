@@ -10,6 +10,7 @@ export const loadEpisodesSuccessActionCreator = (episodes) => ({
   payload: { episodes },
 });
 
-export const loadEpisodesFailureActionCreator = () => ({
+export const loadEpisodesFailureActionCreator = (error) => ({
   type: actionTypes.LOAD_EPISODES_FAILURE,
+  payload: { error },
 });
