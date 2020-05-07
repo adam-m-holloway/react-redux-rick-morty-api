@@ -14,7 +14,7 @@ describe('Episodes reducer', () => {
   it('should add episodes to the store if loading was successful', () => {
     const action = {
       type: actionTypes.LOAD_EPISODES_SUCCESS,
-      payload: { results: mockEpisodes },
+      payload: { episodes: { results: mockEpisodes } },
     };
 
     const newState = episodesReducer({}, action);

@@ -18,7 +18,7 @@ export const episodesReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        episodes: action.payload.results,
+        episodes: action.payload.episodes.results,
       };
     case actionTypes.LOAD_EPISODES_FAILURE:
       return {

@@ -11,7 +11,7 @@ import { getSingleEpisode } from '../../services';
   worker saga
   triggered by the SingleEpisodeSaga() watcher saga
 */
-function* loadSingleEpisodeSaga({ payload: { id } }) {
+export function* loadSingleEpisodeSaga({ payload: { id } }) {
   try {
     const response = yield call(getSingleEpisode, id);
     yield put(loadSingleEpisodeSuccessActionCreator(response.data));

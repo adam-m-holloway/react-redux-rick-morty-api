@@ -18,7 +18,7 @@ export const singleEpisodeReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        episode: action.payload,
+        episode: action.payload.episode,
       };
     case actionTypes.LOAD_SINGLE_EPISODE_FAILURE:
       return {

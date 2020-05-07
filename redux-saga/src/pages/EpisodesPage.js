@@ -50,10 +50,14 @@ const _EpisodesPage = ({ dispatch, episodes, loading, error }) => {
 
 // Can replace this using useSelector and useDispatch
 // Saves destructuring props, see Film-Hooks.js
-const mapStateToProps = (state) => ({
-  episodes: state.episodes.episodes,
-  loading: state.episodes.loading,
-  error: state.episodes.error,
-});
+const mapStateToProps = (state) => {
+  console.log('state:', state);
+
+  return {
+    episodes: state.episodes.episodes,
+    loading: state.episodes.loading,
+    error: state.episodes.error,
+  };
+};
 
 export const EpisodesPage = connect(mapStateToProps, null)(_EpisodesPage);

@@ -7,7 +7,7 @@ export const loadEpisodesRequestActionCreator = () => ({
 
 export const loadEpisodesSuccessActionCreator = (episodes) => ({
   type: actionTypes.LOAD_EPISODES_SUCCESS,
-  payload: episodes,
+  payload: { episodes },
 });
 
 export const loadEpisodesFailureActionCreator = () => ({
