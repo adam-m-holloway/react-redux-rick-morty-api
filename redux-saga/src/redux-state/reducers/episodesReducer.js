@@ -2,7 +2,7 @@ import { actionTypes } from '../actions/actionTypes';
 
 const initialState = {
   episodes: [],
-  loading: false,
+  loading: true,
   error: false,
   errorMessage: '',
 };
@@ -10,10 +10,7 @@ const initialState = {
 export const episodesReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.LOAD_EPISODES_REQUEST:
-      return {
-        ...state,
-        loading: true,
-      };
+      return state;
     case actionTypes.LOAD_EPISODES_SUCCESS:
       return {
         ...state,
